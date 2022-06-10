@@ -40,7 +40,7 @@ const T = Math.pow(2, (255.999 - d) / 8.0) >>> 0; // >>> 0 forces it to unsigned
 
 First the puzzle buffer is padded with zeroes until it is 128 bytes long. Then the goal is to change the last 8 bytes of this buffer (which we will call the `solution`) until the [`blake2b-256`](<https://en.wikipedia.org/wiki/BLAKE_(hash_function)>) hash of this buffer meets this criteria:
 
-The first 4 bytes of the `blake2b-256` hash are read as a little-endian unsigned 32 bit integer. If this integer smaller than the _difficulty threshold_ `T` for the puzzle, the `solution` is **valid**.
+The first 4 bytes of the `blake2b-256` hash are read as a little-endian unsigned 32 bit integer. If this integer is smaller than the _difficulty threshold_ `T` for the puzzle, the `solution` is **valid**.
 
 The only way to solve the puzzle is to exhaustively try different solutions. The probability of getting a solution per attempt is given by `T/(2^32-1)` (note the denominator is the maximum uint32 value), the expected number of attempts required is the inverse of that probability.
 
