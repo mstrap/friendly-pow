@@ -73,7 +73,7 @@ tttt aaaa bbbb v e n d 00000000 pppppppp
 
 The timestamp is in seconds since unix epoch (as unsigned 32 bit integer), the challenge nonce is a cryptographically secure random 8 byte value.
 
-When sent over the network the puzzle is base64 encoded. Along with the puzzle buffer a signature is also sent (more details below). The mesage consists of those two parts with a `.` separating them:
+When sent over the network the puzzle is base64 encoded. Along with the puzzle buffer a signature is also sent (more details below). The message consists of those two parts with a `.` separating them:
 
 ```
 <signature>.<base64 encoded puzzle buffer>
